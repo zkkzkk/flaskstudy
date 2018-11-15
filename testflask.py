@@ -1,5 +1,5 @@
 from flask import Flask
-
+import json
 app = Flask(__name__)
 
 
@@ -9,7 +9,14 @@ def hello_world():
 
 @app.route('/')
 def home():
-    return app.send_static_file('index.html')
+    t = {
+        'a': 1,
+        'b': 2,
+        'c': [3, 4, 5]
+    }
+    return json.dumps(t)
+
+
 
 
 if __name__ == '__main__':
