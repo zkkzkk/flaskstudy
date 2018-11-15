@@ -9,7 +9,7 @@ def hello_world():
 
 @app.route('/')
 def home():
-    return "hhhhhhhhhhhhhhhhhhhhh"
+    return app.send_static_file('index.html')
 
 
 if __name__ == '__main__':
